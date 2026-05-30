@@ -7,6 +7,16 @@ const ShopContextProvider = (props) => {
     const delivery_fee = 50;
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
+    const [cartItems, setCartItems] = useState({});
+    
+    const addToCart = async (productId, quantity) => {
+        setCartItems((prevCartItems) => {
+            const updatedCartItems = { ...prevCartItems };
+            updatedCartItems[productId] = (updatedCartItems[productId] || 0) + quantity;
+            return updatedCartItems;
+        });
+    };
+
     const value = {
         products,
         currency,
@@ -14,7 +24,9 @@ const ShopContextProvider = (props) => {
         search,
         setSearch,
         showSearch,
-        setShowSearch
+        setShowSearch,
+        cartItems,
+        setCartItems
     };
 
     return (
