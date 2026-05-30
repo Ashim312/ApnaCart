@@ -4,6 +4,7 @@ import { ShopContext } from '../context/ShopContext';
 import { useEffect } from 'react';
 import { assets } from '../assets/assets';
 import RelatedProducts from '../components/RelatedProducts';
+import { useNavigate } from 'react-router-dom';
 
 const Product = () => {
   const {productId} = useParams();
