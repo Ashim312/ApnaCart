@@ -4,7 +4,7 @@ const Title = ({text1, text2}) => {
   return (
     <div className='inline-flex gap-2 items-center mb-3'>
       <p className='text-gray-600'>{text1} <span className='text-gray-700 font-medium'>{text2}</span></p>
-      <p className='text-gray-700 w-8 sm:w-12 h-[1px] sm:h-[2px] '></p>
+      <p className='border-b-2 pt-1.5 border-gray-700 w-8 sm:w-12 h-px sm:h-0.5 '></p>
     </div>
   )
 }

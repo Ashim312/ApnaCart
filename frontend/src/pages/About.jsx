@@ -1,6 +1,7 @@
 import React from 'react'
 import Title from '../components/Title'
 import { assets } from '../assets/assets'
+import NewsletterBox from '../components/NewsletterBox'
 
 const About = () => {
 
@@ -22,19 +23,20 @@ const About = () => {
          <Title text1={'Why'} text2={'Choose Us'} />
       </div>
       <div className='flex flex-col md:flex-row text-sm mb-20' >
-        <div className='flex flex-col gap-4 md:w-1/3' >
+        <div className='border border-gray-300 p-9 flex flex-col gap-4 md:w-1/3' >
           <b>Wide Selection</b>
           <p>We offer a wide variety of products across multiple categories, ensuring that you can find exactly what you're looking for. From the latest fashion trends to cutting-edge electronics, we have something for everyone.</p>
         </div>
-        <div className='flex flex-col gap-4 md:w-1/3' >
+        <div className='border border-gray-300 p-9 flex flex-col gap-4 md:w-1/3' >
           <b>Competitive Prices</b>
           <p>We are committed to providing our customers with the best value for their money. We regularly update our prices to ensure that you are getting the most competitive deals on the market.</p>
         </div>
-        <div className='flex flex-col gap-4 md:w-1/3' >
+        <div className='border border-gray-300 p-9 flex flex-col gap-4 md:w-1/3' >
           <b>Exceptional Customer Service</b>
           <p>Our dedicated customer service team is here to assist you with any questions or concerns you may have. We are committed to providing prompt and helpful support to ensure your satisfaction with every purchase.</p>
         </div>
       </div>
+      <NewsletterBox />
       </div>
   )
 }
