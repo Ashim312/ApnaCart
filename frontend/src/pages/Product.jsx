@@ -36,7 +36,7 @@ const Product = () => {
          <div className='flex-1 flex flex-col-reverse gap-3 sm:flex-row '>
             <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full'>
                 {productData.image.map((item, index) => ( 
-                    <img onClick={()=>setImage(item)} key={index} src={item} className='w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer' alt={productData.name} />
+                    <img onClick={()=>setImage(item)} key={index} src={item} className='w-[24%] sm:w-full sm:mb-3 shrink-0 cursor-pointer' alt={productData.name} />
                 ))}
             </div>
             <div className='w-full sm:w-[80] '>
@@ -77,11 +77,11 @@ const Product = () => {
       </div>
       {/*  Description & Review Section  */}
       <div className='mt-20'>
-            <div className='text-gray-400 flex gap-12 sm:gap-20 border-1 border-gray-400 w-max'>
+            <div className='text-gray-400 flex gap-12 sm:gap-20 border border-gray-400 w-max'>
                 <p className='text-gray-700 font-bold cursor-pointer border-b-2 border-gray-500 m-2'>Description</p>
                 <p className='text-gray-500 font-bold cursor-pointer m-2'>Reviews (135)</p>
             </div>
-            <div className=' text-gray-600 border-1 border-gray-400'>
+            <div className=' text-gray-600 border border-gray-400'>
                 <p className='m-2' >An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.
               <br /><br />E-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.</p>
             </div>
