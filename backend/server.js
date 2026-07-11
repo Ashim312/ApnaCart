@@ -5,6 +5,10 @@ import connectDB from "./config/mongodb.js";
 import multer from "multer";
 import connectCloudinary from "./config/cloudinary.js";
 import userRouter from "./routes/userRoute.js";
+import productRouter from "./routes/productRoute.js";
+
+import dotenv from "dotenv";
+
 
 // App Config
 
@@ -12,6 +16,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 connectDB();
 connectCloudinary();
+dotenv.config({ path: "./backend/.env" });
 
 // Middlewares
 
@@ -21,6 +26,7 @@ app.use(multer().none());
 
 // api endpoints
 app.use('/api/user',userRouter)
+app.use('/api/product',productRouter)
 
 app.get("/", (req, res) => {
   res.send("API Working");
