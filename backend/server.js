@@ -7,7 +7,7 @@ import connectCloudinary from "./config/cloudinary.js";
 import userRouter from "./routes/userRoute.js";
 import productRouter from "./routes/productRoute.js";
 
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 
 
 // App Config
@@ -16,13 +16,14 @@ const app = express();
 const port = process.env.PORT || 4000;
 connectDB();
 connectCloudinary();
-dotenv.config({ path: "./backend/.env" });
+// dotenv.config({ path: "./backend/.env" });
 
 // Middlewares
 
 app.use(cors());
 app.use(express.json());
-app.use(multer().none());
+app.use(express.urlencoded({ extended: true }));
+// app.use(multer().none());
 
 // api endpoints
 app.use('/api/user',userRouter)
