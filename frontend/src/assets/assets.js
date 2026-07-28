@@ -157,7 +157,7 @@ export const assets = {
 export const products = [
     {
         _id: "aaaaa",
-        name: "Women Round Neck Cotton Top - ",
+        name: "Women Round Neck Cotton Top",
         description: "A comfortable and stylish round neck cotton top for women. Perfect for casual wear and can be paired with jeans or skirts.",
         price: 499,
         image: [p_img1],
@@ -313,7 +313,7 @@ export const products = [
     },
     {
         _id: "aaaan",
-        name: "Kids Flat Cap - Versatile Casual and",
+        name: "Kids Flat Cap - Versatile Casual",
         description: "A stylish and comfortable flat cap for kids. Made from high-quality polyester fabric, perfect for casual and formal wear.",
         price: 349,
         image: [p_img14],
@@ -325,7 +325,7 @@ export const products = [
     },
     {
         _id: "aaaao",
-        name: "Men's Track Pant - Jogger Style with",
+        name: "Men's Track Pant - Jogger Style",
         description: "A stylish and comfortable track pant for men. Made from high-quality cotton terry fabric, perfect for casual wear and can be paired with a t-shirt or shirt.",
         price: 899,
         image: [p_img15],
@@ -349,7 +349,7 @@ export const products = [
     },
     {
         _id: "aaaaq",
-        name: "Jockey Men's Cotton Trackpants with",
+        name: "Jockey Men's Cotton Trackpants",
         description: "A stylish and comfortable track pant for men. Made from high-quality super combed cotton rich fabric, perfect for casual wear and can be paired with a t-shirt or shirt.",
         price: 879,
         image: [p_img17],
@@ -373,7 +373,7 @@ export const products = [
     },
     {
         _id: "aaaas",
-        name: "Kids Round Neck Boys T-Shirt -",
+        name: "Kids Round Neck Boys T-Shirt",
         description: "Kids Round Neck Boys T-Shirt Half Sleeves 100% Cotton Rich Ultra Soft Fabric Comfortable Stylish Plain Solid Color Original Branded Tshirt for boys",
         price: 249,
         image: [p_img19],
@@ -542,7 +542,7 @@ export const products = [
     },
     {
         _id: "aaabg",
-        name: "Men's Solid Linen Cotton Shirt, Casual,",
+        name: "Men's Solid Linen Cotton Shirt, Casual",
         description: "A stylish and comfortable solid linen cotton shirt for men. Made from high-quality fabric, perfect for casual and formal wear and can be paired with jeans or trousers.",
         price: 379,
         image: [p_img33],
@@ -590,12 +590,12 @@ export const products = [
     },
     {
         _id: "aaabk",
-        name: "Cotton Jamdani Kurta Punjabi for Men,",
+        name: "Cotton Jamdani Kurta Punjabi for Men",
         description: "A stylish and comfortable cotton jamdani kurta for men. Made from high-quality fabric, perfect for traditional occasions and can be paired with jeans or trousers.",
         price: 799,
         image: [p_img37],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "Fullwear",
         sizes: ["S", "M", "L", "XL"],
         date: "1716306345448",
         bestseller: true
@@ -679,7 +679,7 @@ export const products = [
         price: 1124,
         image: [p_img44],
         category: "Women",
-        subCategory: "Outerwear",
+        subCategory: "Winterwear",
         sizes: ["S", "M", "L", "XL"],
         date: "1716243345448",
         bestseller: false
@@ -698,12 +698,12 @@ export const products = [
     },
     {
         _id: "aaabt",
-        name: "TAGAS Men's Regular Jacket Fit For",
+        name: "TAGAS Men's Regular Jacket Fit",
         description: "A stylish and comfortable regular jacket for men. Made from high-quality fabric, perfect for casual wear and can be paired with jeans or trousers.",
         price: 899,
         image: [p_img46],
         category: "Men",
-        subCategory: "Outerwear",
+        subCategory: "Winterwear",
         sizes: ["S", "M", "L", "XL"],
         date: "1716225345448",
         bestseller: false
@@ -727,7 +727,7 @@ export const products = [
         price: 899,
         image: [p_img48],
         category: "Men",
-        subCategory: "Outerwear",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: "1716207345448",
         bestseller: true
@@ -746,7 +746,7 @@ export const products = [
     },
     {
         _id: "aaabx",
-        name: "Snowball Regular Fit Palazzo Pants for",
+        name: "Snowball Regular Fit Palazzo Pants",
         description: "A stylish and comfortable regular fit palazzo pants for girls and kids. Made from high-quality fabric, perfect for daily use and can be paired with a top or blouse.",
         price: 459,
         image: [p_img50],
@@ -763,7 +763,7 @@ export const products = [
         price: 699,
         image: [p_img51],
         category: "Women",
-        subCategory: "Outerwear",
+        subCategory: "Winterwear",
         sizes: ["S", "M", "L", "XL"],
         date: "1716180345448",
         bestseller: false
@@ -775,7 +775,7 @@ export const products = [
         price: 495,
         image: [p_img52],
         category: "Men",
-        subCategory: "Outerwear",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: "1716171345448",
         bestseller: false

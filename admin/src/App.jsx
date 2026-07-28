@@ -9,6 +9,7 @@ import Login from './components/Login'
 import { ToastContainer, toast } from 'react-toastify';
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL
+export const currency = '₹'
 
 const App = () => {
   const [token,setToken] = useState(localStorage.getItem('token')?localStorage.getItem('token'):'');
@@ -24,7 +25,7 @@ useEffect(() =>{
       ? <Login setToken={setToken} />
     : <>
       <Navbar setToken={setToken} />
-      <hr/>
+      <hr className='text-gray-400'/>
       <div className="flex w-full">
         <Sidebar />
         <div className='w-[70%] mx-auto ml-[max(5vw,25px)] my-8 text-gray-600 text-base' >

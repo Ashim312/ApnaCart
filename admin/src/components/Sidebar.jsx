@@ -4,8 +4,8 @@ import { assets } from '../assets/assets'
 
 const Sidebar = () => {
   return (
-    <div className='w-[18%] min-h-screen border-r-2' >
-        <div className='flex flex-col gap-4 pt-6 pl-[20%] text-[15px]' >
+    <div className='w-[18%] min-h-screen border-r-2 text-gray-400' >
+        <div className='flex flex-col gap-4 pt-6 pl-[20%] text-[15px] text-black' >
             <NavLink to="/add" className='flex items-center gap-3 px-2 py-2 border border-gray-300 border-r-0 rounded-l'>
                 <img className='w-5 h-5' src={assets.add_icon} alt="Add"/>
                 <p className='hidden md:block' >Add Items</p>
