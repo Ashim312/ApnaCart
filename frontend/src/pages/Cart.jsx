@@ -8,6 +8,7 @@ const Cart = () => {
   
   const {products, cartItems, currency, updateQuantity, navigate} = useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
+  
   useEffect(() => {
     let data = [];
     for (const items in cartItems) {

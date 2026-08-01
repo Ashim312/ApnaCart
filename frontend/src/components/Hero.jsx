@@ -8,8 +8,8 @@ const Hero = () => {
       <div className='w-full sm:w-1/2 p-6'>
       <div className='flex justify-center items-center flex-col'>
         <h1 className='text-3xl font-bold mb-4 '>Discover Your Perfect Style</h1>
-        <div class="flex items-center gap-2 mb-4">
-             <p class="w-8 md:w-11 h-[2px] bg-[#414141]"></p>
+        <div className="flex items-center gap-2 mb-4">
+             <p className="w-8 md:w-11 h-0.5 bg-[#414141]"></p>
              <h1 className='prata-regular text-3xl sm:py-0 lg:text-5xl leading-relaxed'>Our Bestsellers</h1>
         </div>
         <p className='text-gray-600 mb-4'>Step into our collection and find the perfect piece that reflects your unique style.</p>
