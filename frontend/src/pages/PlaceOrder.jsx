@@ -10,7 +10,7 @@ import axios from 'axios';
 
 const PlaceOrder = () => {
   const [method, setMethod] = useState('cod');
-  const [isSubmitting, setIsSubmitting] = useState(false);
+//   const [isSubmitting, setIsSubmitting] = useState(false);
   const {navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, delivery_fee, products} = useContext(ShopContext);
   const [formData, setFormData] = useState({
    firstName: '',
@@ -33,9 +33,9 @@ const PlaceOrder = () => {
   const onSubmitHandler = async (event) => {
     event.preventDefault()
 
-    if (isSubmitting) {
-      return
-    }
+    // if (isSubmitting) {
+    //   return
+    // }
 
     if (!token) {
       toast.error('Please login before placing an order')
@@ -43,7 +43,7 @@ const PlaceOrder = () => {
       return
     }
 
-    setIsSubmitting(true)
+   //  setIsSubmitting(true)
     try {
       let orderItems = []
 
@@ -87,7 +87,7 @@ const PlaceOrder = () => {
       console.error(error)
       toast.error(error?.response?.data?.message || error.message || 'Order placement failed')
     } finally {
-      setIsSubmitting(false)
+      // setIsSubmitting(false)
     }
   }
 
@@ -137,7 +137,8 @@ const PlaceOrder = () => {
                  </div>
            </div>
            <div className='w-full text-end mt-8'>
-            <button disabled={isSubmitting} type='submit' className={`bg-black text-white px-16 py-3 rounded ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} >{isSubmitting ? 'Placing...' : 'Place Order'}</button>
+           <button type='submit' className='bg-black text-white px-16 py-3 rounded'>Place Order</button>
+            {/* <button disabled={isSubmitting} type='submit' className={`bg-black text-white px-16 py-3 rounded ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} >{isSubmitting ? 'Placing...' : 'Place Order'}</button> */}
            </div>
          </div>
       </div>
