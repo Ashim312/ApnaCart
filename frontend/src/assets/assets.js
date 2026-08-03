@@ -70,12 +70,10 @@ import profile_icon from './profile_icon.png';
 import list_icon from './list_icon.png';
 import exchange_icon from './exchange_icon.png';
 import cross_icon from './cross_icon.png';
-import phonepe_logo from './phonepe_logo.png';
-import gpay_logo from './gpay_logo.png';
-import upi_logo from './upi_logo.png';
 import quality_icon from './quality_icon.png';
 import star_icon from './star_icon.png';
 import star_dull_icon from './star_dull_icon.png';
+import razorpay_logo from './razorpay_logo.png';
 
 export const assets = {
     p_img1,
@@ -145,13 +143,11 @@ export const assets = {
     profile_icon,
     list_icon,
     exchange_icon,
-    phonepe_logo,
-    gpay_logo,
-    upi_logo,
     quality_icon,
     star_icon,
     star_dull_icon,
-    background_img
+    background_img,
+    razorpay_logo
 };
 
 export const products = [

@@ -5,7 +5,7 @@ import { ShopContext } from '../context/ShopContext'
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const { setShowSearch, getCartCount, navigate, token, setToken, setCartItems } = useContext(ShopContext);
+  const { setShowSearch, getCartCount, navigate, token, setToken, setCartItems, adminUrl } = useContext(ShopContext);
   const location = useLocation();
 
   const logout = () => {
@@ -42,12 +42,16 @@ const Navbar = () => {
           <p>CONTACT</p>
           <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden'/>
         </NavLink>
+        
       </ul>
 
       <div className='flex items-center gap-6'>
         {location.pathname === '/collection' && (
           <img onClick={() => setShowSearch(true)} src={assets.search_img} alt="Search" className='w-5 cursor-pointer' />
         )}
+        <a href={adminUrl} target="_blank" rel="noopener noreferrer" className='hidden sm:inline-flex items-center justify-center rounded-full border border-gray-300 px-4 py-2 text-sm font-medium text-gray-800 hover:bg-slate-100 transition'>
+          Admin Panel
+        </a>
         <div className='relative group'>
           <img onClick={()=> token ? null : navigate('/login')} src={assets.profile_icon} alt="Profile" className='w-5 cursor-pointer' />
           {/* Dropdown Menu */}

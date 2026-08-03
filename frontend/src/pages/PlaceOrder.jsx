@@ -10,7 +10,6 @@ import axios from 'axios';
 
 const PlaceOrder = () => {
   const [method, setMethod] = useState('cod');
-//   const [isSubmitting, setIsSubmitting] = useState(false);
   const {navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, delivery_fee, products} = useContext(ShopContext);
   const [formData, setFormData] = useState({
    firstName: '',
@@ -30,12 +29,34 @@ const PlaceOrder = () => {
    setFormData(data => ({...data,[name]:value}))
   }
 
+  const initPay = (order) => {
+   const options = {
+      key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+      amount: order.amount,
+      currency: order.currency,
+      name: 'Order Payment',
+      description: 'Order Payment',
+      order_id: order.id,
+      receipt: order.receipt,
+      handler: async (response) => {
+         console.log(response);
+         try {
+            const { data } = await axios.post(backendUrl + '/api/order/verifyRazorpay', response, {headers:{token}})
+            if (data.success) {
+               setCartItems({})
+            }
+         } catch (error) {
+            console.log(error)
+            toast.error(error)
+         }
+      }
+   }
+   const rzp = new window.Razorpay(options);
+   rzp.open();
+  }
+
   const onSubmitHandler = async (event) => {
     event.preventDefault()
-
-    // if (isSubmitting) {
-    //   return
-    // }
 
     if (!token) {
       toast.error('Please login before placing an order')
@@ -43,7 +64,6 @@ const PlaceOrder = () => {
       return
     }
 
-   //  setIsSubmitting(true)
     try {
       let orderItems = []
 
@@ -78,7 +98,15 @@ const PlaceOrder = () => {
                toast.error(response.data.message)
             }
             break;
-      
+         case 'razorpay':
+            const responseRazorpay = await axios.post(backendUrl + '/api/order/razorpay', orderData, {headers: {token}})
+            if (responseRazorpay.data.success) {
+               console.log(responseRazorpay.data.order);
+               initPay(responseRazorpay.data.order);
+               navigate('/orders')
+            } else {
+               toast.error(response.data.message)
+            }
          default:
             break;
       }
@@ -86,8 +114,6 @@ const PlaceOrder = () => {
     } catch (error) {
       console.error(error)
       toast.error(error?.response?.data?.message || error.message || 'Order placement failed')
-    } finally {
-      // setIsSubmitting(false)
     }
   }
 
@@ -123,13 +149,9 @@ const PlaceOrder = () => {
              <Title text1={'Payment'} text2={'Method'} />
              {/* Payment Method Selection */}
              <div className='grid grid-cols-1 lg:grid-cols-3 gap-3 mt-4' >
-                 <div onClick={()=>setMethod('gpay')} className={`flex items-center justify-between gap-4 border pr-3 rounded-3xl cursor-pointer transition h-12.5 ${method === 'gpay' ? 'border-orange-400 bg-orange-100' : 'border-gray-400 bg-transparent'}`} >
-                    <img className='h-16 w-auto max-w-35' src={assets.gpay_logo} alt='GPay' />
-                    <p className={`min-w-4 h-4 rounded-full border ${method === 'gpay' ? 'bg-green-500 border-green-500' : 'border-gray-400'}`} ></p>
-                 </div>
-                 <div onClick={()=>setMethod('phonepe')} className={`flex items-center justify-between gap-4 border p-3 rounded-3xl cursor-pointer transition h-12.5 ${method === 'phonepe' ? 'border-orange-400 bg-orange-100' : 'border-gray-400 bg-transparent'}`} >
-                    <img className='h-16 w-auto max-w-35' src={assets.phonepe_logo} alt='PhonePe' />
-                    <p className={`min-w-4 h-4 rounded-full border ${method === 'phonepe' ? 'bg-green-500 border-green-500' : 'border-gray-400'}`} ></p>
+                 <div onClick={()=>setMethod('razorpay')} className={`flex items-center justify-between gap-4 border p-3 rounded-3xl cursor-pointer transition h-12.5 ${method === 'razorpay' ? 'border-orange-400 bg-orange-100' : 'border-gray-400 bg-transparent'}`} >
+                    <img className='h-16 w-auto max-w-35' src={assets.razorpay_logo} alt='Razorpay' />
+                    <p className={`min-w-4 h-4 rounded-full border ${method === 'razorpay' ? 'bg-green-500 border-green-500' : 'border-gray-400'}`} ></p>
                  </div>
                  <div onClick={()=>setMethod('cod')} className={`flex items-center justify-between gap-4 border p-3 rounded-3xl cursor-pointer transition h-12.5 ${method === 'cod' ? 'border-orange-400 bg-orange-100' : 'border-gray-400 bg-transparent'}`} >
                     <p className='text-sm font-semibold text-slate-900'>Cash on Delivery</p>
@@ -138,7 +160,6 @@ const PlaceOrder = () => {
            </div>
            <div className='w-full text-end mt-8'>
            <button type='submit' className='bg-black text-white px-16 py-3 rounded'>Place Order</button>
-            {/* <button disabled={isSubmitting} type='submit' className={`bg-black text-white px-16 py-3 rounded ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} >{isSubmitting ? 'Placing...' : 'Place Order'}</button> */}
            </div>
          </div>
       </div>

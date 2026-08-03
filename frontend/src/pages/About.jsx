@@ -7,7 +7,7 @@ const About = () => {
 
   return (
     <div>
-    <div className='text-2xl text-center pt-8 border-t'>
+    <div className='text-2xl text-center pt-8 border-t text-gray-500'>
       <Title text1={'About'} text2={'Us'} />
     </div>
       <div className='my-10 flex flex-col md:flex-row gap-16' >
